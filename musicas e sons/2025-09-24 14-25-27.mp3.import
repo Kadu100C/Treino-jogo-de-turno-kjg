@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2uvyhr8om6ad"
+path="res://.godot/imported/2025-09-24 14-25-27.mp3-53a9e1074d75a4f3b399af12a3d41bc2.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/2025-09-24 14-25-27.mp3"
+dest_files=["res://.godot/imported/2025-09-24 14-25-27.mp3-53a9e1074d75a4f3b399af12a3d41bc2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
