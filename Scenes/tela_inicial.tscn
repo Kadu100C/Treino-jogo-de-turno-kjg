@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgypgsh8gvp1a"]
+[gd_scene load_steps=5 format=3 uid="uid://bgypgsh8gvp1a"]
 
+[ext_resource type="Script" uid="uid://u12segp66t1i" path="res://Scripts/tela_inicial.gd" id="1_pekxb"]
 [ext_resource type="FontFile" uid="uid://bma8w7r6w3ixh" path="res://Fonts/dogica.ttf" id="1_rrt2p"]
 [ext_resource type="Theme" uid="uid://iovpinp2vmiu" path="res://Fonts/theme.tres" id="2_pekxb"]
 
@@ -8,8 +9,9 @@ default_font = ExtResource("1_rrt2p")
 default_font_size = 17
 
 [node name="tela_inicial" type="CanvasLayer"]
+script = ExtResource("1_pekxb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="cor_de_fundo" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,23 +19,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.3080075, 0.3763027, 0.4349511, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="hud" type="VBoxContainer" parent="."]
+offset_left = 108.0
+offset_top = 110.81
+offset_right = 212.0
+offset_bottom = 163.81001
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="iniciar_jogo" type="Button" parent="hud"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -43,7 +39,7 @@ theme_override_font_sizes/font_size = 8
 text = "Iniciar Jogo"
 flat = true
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="sair" type="Button" parent="hud"]
 layout_mode = 2
 theme = ExtResource("2_pekxb")
 theme_override_constants/outline_size = 7
@@ -51,7 +47,7 @@ theme_override_font_sizes/font_size = 8
 text = "Sair"
 flat = true
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="creditos" type="Button" parent="hud"]
 layout_mode = 2
 theme = ExtResource("2_pekxb")
 theme_override_constants/outline_size = 7
@@ -59,10 +55,20 @@ theme_override_font_sizes/font_size = 8
 text = "Créditos"
 flat = true
 
-[node name="Label" type="Label" parent="."]
+[node name="label_treino" type="Label" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -52.07
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 42
 text = "Treino"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="hud/iniciar_jogo" to="." method="_on_iniciar_jogo_pressed"]
+[connection signal="pressed" from="hud/sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="hud/creditos" to="." method="_on_creditos_pressed"]
