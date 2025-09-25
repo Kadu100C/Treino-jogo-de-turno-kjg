@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3p3x47kkbapn"]
 
 [ext_resource type="Script" uid="uid://slb6nn0a5kvl" path="res://Scripts/batalha.gd" id="1_3fqmh"]
-[ext_resource type="AudioStream" uid="uid://b2uvyhr8om6ad" path="res://musicas e sons/2025-09-24 14-25-27.mp3" id="1_tspmc"]
+[ext_resource type="AudioStream" uid="uid://doxl0jrt2a4sn" path="res://musicas e sons/2025-09-24 14-28-32.mp3" id="2_3fqmh"]
 
 [node name="batalha" type="Node2D"]
 script = ExtResource("1_3fqmh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_tspmc")
+stream = ExtResource("2_3fqmh")
 autoplay = true
 attenuation = 0.51763254
 parameters/looping = true
