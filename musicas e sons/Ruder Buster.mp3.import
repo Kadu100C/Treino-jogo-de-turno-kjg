@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://i60ekul242jm"
+path="res://.godot/imported/Ruder Buster.mp3-ca80d6840a5212fe4d1b2a1d582c563f.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/Ruder Buster.mp3"
+dest_files=["res://.godot/imported/Ruder Buster.mp3-ca80d6840a5212fe4d1b2a1d582c563f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
