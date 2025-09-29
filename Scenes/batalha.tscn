@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3p3x47kkbapn"]
+[gd_scene load_steps=8 format=3 uid="uid://c3p3x47kkbapn"]
 
 [ext_resource type="Script" uid="uid://slb6nn0a5kvl" path="res://Scripts/batalha.gd" id="1_3fqmh"]
 [ext_resource type="AudioStream" uid="uid://doxl0jrt2a4sn" path="res://musicas e sons/2025-09-24 14-28-32.mp3" id="2_3fqmh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://o2ndio2d53ji" path="res://Scenes/I.tscn" id="4_w77qu"]
 [ext_resource type="Texture2D" uid="uid://d3ikbleewh4l7" path="res://Sprites/I sprite death.png" id="5_ieg8j"]
 [ext_resource type="PackedScene" uid="uid://cac4oai7s6ou2" path="res://Scenes/pause.tscn" id="6_u5k4c"]
+[ext_resource type="PackedScene" uid="uid://cqxklvbfyiakr" path="res://Scenes/inimigo.tscn" id="7_xkapm"]
 
 [node name="batalha" type="Node2D"]
 script = ExtResource("1_3fqmh")
@@ -21,13 +22,21 @@ position = Vector2(160, 90)
 texture = ExtResource("3_h366l")
 
 [node name="I" parent="." instance=ExtResource("4_w77qu")]
-visible = false
 position = Vector2(70, 91)
 
 [node name="bruh" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(74, 92)
 scale = Vector2(1.625, 1)
 texture = ExtResource("5_ieg8j")
+
+[node name="inimigos" type="Node" parent="."]
+
+[node name="inimigo2" parent="inimigos" instance=ExtResource("7_xkapm")]
+position = Vector2(221, 74)
+
+[node name="inimigo" parent="inimigos" instance=ExtResource("7_xkapm")]
+position = Vector2(241, 121)
 
 [node name="pause" parent="." instance=ExtResource("6_u5k4c")]
 visible = false
