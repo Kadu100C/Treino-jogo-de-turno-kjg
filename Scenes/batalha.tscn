@@ -1,7 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://c3p3x47kkbapn"]
 
 [ext_resource type="Script" uid="uid://slb6nn0a5kvl" path="res://Scripts/batalha.gd" id="1_3fqmh"]
-[ext_resource type="AudioStream" uid="uid://doxl0jrt2a4sn" path="res://musicas e sons/2025-09-24 14-28-32.mp3" id="2_3fqmh"]
 [ext_resource type="Texture2D" uid="uid://bt68kxwxg732f" path="res://Sprites/sprite batalha.png" id="3_h366l"]
 [ext_resource type="PackedScene" uid="uid://o2ndio2d53ji" path="res://Scenes/I.tscn" id="4_w77qu"]
 [ext_resource type="Texture2D" uid="uid://d3ikbleewh4l7" path="res://Sprites/I sprite death.png" id="5_ieg8j"]
@@ -14,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c757uehhryqsu" path="res://musicas e sons/undertale-sfx-rare-to-find.mp3" id="11_50at1"]
 [ext_resource type="AudioStream" uid="uid://csikddsicv5fo" path="res://musicas e sons/undertale-save.mp3" id="12_wpwty"]
 [ext_resource type="AudioStream" uid="uid://cuqdx57jwnv5t" path="res://musicas e sons/undertale-soul-shatter.mp3" id="13_qyj0f"]
+[ext_resource type="AudioStream" uid="uid://i60ekul242jm" path="res://musicas e sons/Ruder Buster.mp3" id="14_qyj0f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44jq3"]
 bg_color = Color(0.37254903, 0.09803922, 0.09803922, 1)
@@ -43,12 +43,6 @@ anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="musica_de_batalha_(ruder_buster)" type="AudioStreamPlayer2D" parent="Control"]
-stream = ExtResource("2_3fqmh")
-autoplay = true
-attenuation = 0.51763254
-parameters/looping = true
 
 [node name="cenario" type="Sprite2D" parent="Control"]
 position = Vector2(160, 90)
@@ -101,7 +95,7 @@ offset_right = 27.0
 offset_bottom = 16.0
 theme_override_styles/background = SubResource("StyleBoxFlat_44jq3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vg7sy")
-max_value = 140.0
+max_value = 120.0
 fill_mode = 3
 show_percentage = false
 
@@ -229,6 +223,12 @@ one_shot = true
 
 [node name="pause" parent="." instance=ExtResource("6_u5k4c")]
 visible = false
+
+[node name="musica_batalha" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_qyj0f")
+autoplay = true
+attenuation = 0.51763254
+parameters/looping = true
 
 [connection signal="pressed" from="Control/act/PanelContainer/VBoxContainer/lutar" to="." method="_on_lutar_pressed"]
 [connection signal="pressed" from="Control/act/PanelContainer/VBoxContainer/magia" to="." method="_on_magia_pressed"]

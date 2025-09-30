@@ -6,10 +6,11 @@ extends CanvasLayer
 func _ready() -> void:
 	Global.i_hp = 120
 	Global.i_atk = 25
+	Global.i_heal = 25
 	Global.inimigo_hp = 160
 	Global.inimigo_atk = 10
 	Global.big_shot = 20
-	Global.inimigo2_hp =140
+	Global.inimigo2_hp =120
 	Global.inimigo2_atk = 15
 	Global.big_shot2 =25
 	hud.visible = true

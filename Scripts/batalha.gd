@@ -15,7 +15,8 @@ extends Node2D
 @onready var vida_inimigo: ProgressBar = $Control/inimigos/inimigo/vida_inimigo
 @onready var vida_inimigo_2: ProgressBar = $Control/inimigos/inimigo2/vida_inimigo_2
 
-@onready var musica_de_batalha__ruder_buster_: AudioStreamPlayer2D = $"Control/musica_de_batalha_(ruder_buster)"
+@onready var musica_batalha: AudioStreamPlayer2D = $musica_batalha
+
 @onready var enemy_hit: AudioStreamPlayer2D = $"Control/efeitos sonoros/enemy_hit"
 @onready var i_slash: AudioStreamPlayer2D = $"Control/efeitos sonoros/i_slash"
 @onready var take_damage: AudioStreamPlayer2D = $"Control/efeitos sonoros/take_damage"
@@ -62,7 +63,8 @@ func _process(delta: float) -> void:
 
 
 	if Global.i_hp <= 0:
-		musica_de_batalha__ruder_buster_.stop()
+		turno = 0
+		musica_batalha.stop()
 		jogador.play("damage")
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://Scenes/voce_perdeu_wtf.tscn")
@@ -73,7 +75,7 @@ func _process(delta: float) -> void:
 		vida_inimigo.visible = false
 		inimigo_2.play("enemy_bruh")
 		vida_inimigo_2.visible =false
-		musica_de_batalha__ruder_buster_.stop()
+		musica_batalha.stop()
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://Scenes/voce_venceu.tscn")
 
@@ -104,14 +106,14 @@ func turno_inimigo():
 		jogador.play("idle")
 		if Global.i_hp <= Global.inimigo_hp:
 			Global.i_hp -= Global.inimigo_atk
-			if Global.inimigo2_hp >= 0:
+			if Global.inimigo2_hp > 0:
 				turno = -2
 				turno_inimigo2()
 			else:
 				turno = 1
 		else:
 			Global.i_hp -= Global.big_shot
-			if Global.inimigo2_hp >= 0:
+			if Global.inimigo2_hp > 0:
 				turno = -2
 				turno_inimigo2()
 			else:
@@ -169,10 +171,10 @@ func _on_inimigo_a_pressed() -> void:
 	vida_inimigo.value = Global.inimigo_hp
 	await get_tree().create_timer(0.5).timeout
 	jogador.play("idle")
-	if Global.inimigo_hp >= 0:
+	if Global.inimigo_hp > 0:
 		turno = -1
 		turno_inimigo()
-	if Global.inimigo_hp <= 0:
+	if Global.inimigo_hp < 0:
 		turno = -2
 		turno_inimigo2()
 		
@@ -190,10 +192,10 @@ func _on_inimigo_b_pressed() -> void:
 	vida_inimigo_2.value = Global.inimigo2_hp
 	await get_tree().create_timer(0.5).timeout
 	jogador.play("idle")
-	if Global.inimigo_hp >= 0:
+	if Global.inimigo_hp > 0:
 		turno = -1
 		turno_inimigo()
-	if Global.inimigo_hp <= 0:
+	if Global.inimigo_hp < 0:
 		turno = -2
 		turno_inimigo2()
 func _on_magia_pressed() -> void:
@@ -210,10 +212,10 @@ func _on_curar_pressed() -> void:
 	Global.i_hp += Global.i_heal
 	vida_jogador.value = Global.i_hp
 	jogador.play("idle")
-	if Global.inimigo_hp >= 0:
+	if Global.inimigo_hp > 0:
 		turno = -1
 		turno_inimigo()
-	if Global.inimigo_hp <= 0:
+	if Global.inimigo_hp < 0:
 		turno = -2
 		turno_inimigo2()
 func _on_aprimorar_pressed() -> void:
@@ -222,9 +224,9 @@ func _on_aprimorar_pressed() -> void:
 	Global.i_atk += 10
 	Global.i_heal += 5
 	jogador.play("idle")
-	if Global.inimigo_hp >= 0:
+	if Global.inimigo_hp > 0:
 		turno = -1
 		turno_inimigo()
-	if Global.inimigo_hp <= 0:
+	if Global.inimigo_hp < 0:
 		turno = -2
 		turno_inimigo2()
