@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcjs8d6ujx0mq"]
+
+[ext_resource type="Texture2D" uid="uid://d3ikbleewh4l7" path="res://Sprites/I sprite death.png" id="1_1kkdt"]
+
+[node name="voce_perdeu_wtf" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 122)
+scale = Vector2(3.4583333, 1)
+texture = ExtResource("1_1kkdt")

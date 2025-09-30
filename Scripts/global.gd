@@ -1,9 +1,10 @@
 extends Node
 
 #variaveis do jogador
-var i_hp: int = 120
-var i_atk: int = 20
+var i_hp = 120
+var i_atk = 20
 
 #variaveis do inimigo
-var inimigo_hp: int = 80
-var inimigo_atk: int = 10
+var inimigo_hp = 160
+var inimigo_atk = 10
+var big_shot = 20

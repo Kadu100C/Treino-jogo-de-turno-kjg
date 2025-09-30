@@ -58,7 +58,6 @@ offset_right = -22.0
 offset_bottom = 17.0
 theme_override_styles/background = SubResource("StyleBoxFlat_44jq3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vg7sy")
-max_value = 120.0
 value = 100.0
 fill_mode = 3
 show_percentage = false
@@ -81,7 +80,7 @@ offset_right = 27.0
 offset_bottom = 16.0
 theme_override_styles/background = SubResource("StyleBoxFlat_44jq3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vg7sy")
-max_value = 160.0
+value = 100.0
 fill_mode = 3
 show_percentage = false
 

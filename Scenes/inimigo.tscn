@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://cqxklvbfyiakr"]
+[gd_scene load_steps=31 format=3 uid="uid://cqxklvbfyiakr"]
 
 [ext_resource type="Texture2D" uid="uid://dkfllv8klojad" path="res://Sprites/inimigo sprite big shot-Sheet.png" id="1_1vr66"]
 [ext_resource type="Script" uid="uid://cv13jnyug3048" path="res://Scripts/inimigo.gd" id="1_fokg4"]
 [ext_resource type="Texture2D" uid="uid://bfljd48jjan5" path="res://Sprites/inimigo sprite idle-Sheet.png" id="1_nj8y5"]
+[ext_resource type="Texture2D" uid="uid://da77ns033cm28" path="res://Sprites/inimigo sprite morto-Sheet.png" id="2_fokg4"]
 [ext_resource type="Texture2D" uid="uid://bubdkkw0sili7" path="res://Sprites/inimigo sprite damage-Sheet.png" id="2_qpp8r"]
 [ext_resource type="Texture2D" uid="uid://bpwpej6ukt50w" path="res://Sprites/inimigo sprite attack-Sheet.png" id="5_gb7r5"]
 
@@ -37,6 +38,10 @@ region = Rect2(0, 96, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ar8p1"]
 atlas = ExtResource("1_1vr66")
 region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5s2e"]
+atlas = ExtResource("2_fokg4")
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fads8"]
 atlas = ExtResource("2_qpp8r")
@@ -130,6 +135,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d5s2e")
+}],
+"loop": true,
+"name": &"enemy_bruh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fads8")
 }, {
 "duration": 1.0,
@@ -200,8 +213,6 @@ animations = [{
 
 [node name="inimigo" type="AnimatedSprite2D" groups=["Enemy"]]
 sprite_frames = SubResource("SpriteFrames_d5s2e")
-animation = &"little_shot"
+animation = &"enemy_bruh"
 autoplay = "enemy_idle"
-frame = 8
-frame_progress = 1.0
 script = ExtResource("1_fokg4")
