@@ -10,6 +10,12 @@ extends Node2D
 @onready var vida_jogador: ProgressBar = $Control/I/vida_jogador
 @onready var vida_inimigo: ProgressBar = $Control/inimigos/inimigo/vida_inimigo
 @onready var musica_de_batalha__ruder_buster_: AudioStreamPlayer2D = $"Control/musica_de_batalha_(ruder_buster)"
+@onready var enemy_hit: AudioStreamPlayer2D = $"Control/efeitos sonoros/enemy_hit"
+@onready var i_slash: AudioStreamPlayer2D = $"Control/efeitos sonoros/i_slash"
+@onready var take_damage: AudioStreamPlayer2D = $"Control/efeitos sonoros/take_damage"
+@onready var curinha: AudioStreamPlayer2D = $"Control/efeitos sonoros/curinha"
+@onready var buff: AudioStreamPlayer2D = $"Control/efeitos sonoros/buff"
+@onready var enemy_attck: AudioStreamPlayer2D = $"Control/efeitos sonoros/enemy_attck"
 
 
 
@@ -47,17 +53,20 @@ func _process(delta: float) -> void:
 	if Global.inimigo_hp <= 0:
 		turno = 0
 		inimigo.play("enemy_bruh")
-		await get_tree().create_timer(5).timeout
-		get_tree().change_scene_to_file("res://Scenes/tela_inicial.tscn")
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://Scenes/voce_venceu.tscn")
 
 func turno_inimigo():
 	if turno == -1:
 		if Global.i_hp <= Global.inimigo_hp:
 			inimigo.play("little_shot")
+			enemy_attck.play()
 		else:
 			inimigo.play("big_shot")
+			enemy_attck.play()
 		await get_tree().create_timer(1.5).timeout
 		jogador.play("damage")
+		take_damage.play()
 		await get_tree().create_timer(1).timeout
 		inimigo.play("enemy_idle")
 		jogador.play("idle")
@@ -77,7 +86,11 @@ func _on_lutar_pressed() -> void:
 	jogador.play("act")
 	await get_tree().create_timer(1).timeout
 	jogador.play("attack")
+	await get_tree().create_timer(0.4).timeout
+	i_slash.play()
 	inimigo.play("enemy_damage")
+	await get_tree().create_timer(0.5).timeout
+	enemy_hit.play()
 	await get_tree().create_timer(1).timeout
 	inimigo.play("enemy_idle")
 	Global.inimigo_hp -= Global.i_atk
@@ -93,6 +106,7 @@ func _on_magia_pressed() -> void:
 	jogador.play("cast")
 
 func _on_curar_pressed() -> void:
+	curinha.play()
 	turno = 0
 	Global.i_hp += 20
 	vida_jogador.value = Global.i_hp
@@ -100,6 +114,7 @@ func _on_curar_pressed() -> void:
 	turno = -1
 	turno_inimigo()
 func _on_aprimorar_pressed() -> void:
+	buff.play()
 	turno = 0
 	Global.i_atk += 10
 	jogador.play("idle")

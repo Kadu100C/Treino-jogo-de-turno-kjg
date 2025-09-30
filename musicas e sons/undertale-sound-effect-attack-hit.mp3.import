@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://clv72xgfk8cvg"
+path="res://.godot/imported/undertale-sound-effect-attack-hit.mp3-c6ee4e52c5d70067141a07ff301d44d6.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/undertale-sound-effect-attack-hit.mp3"
+dest_files=["res://.godot/imported/undertale-sound-effect-attack-hit.mp3-c6ee4e52c5d70067141a07ff301d44d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

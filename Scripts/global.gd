@@ -1,5 +1,8 @@
 extends Node
 
+
+
+
 #variaveis do jogador
 var i_hp = 120
 var i_atk = 20

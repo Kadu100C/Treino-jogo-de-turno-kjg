@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmcm8s0qai45y"
+path="res://.godot/imported/Tem Shop.mp3-e81a322d7cc772a95f2a7ad2d0cf1c95.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/Tem Shop.mp3"
+dest_files=["res://.godot/imported/Tem Shop.mp3-e81a322d7cc772a95f2a7ad2d0cf1c95.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
