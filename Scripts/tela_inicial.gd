@@ -5,10 +5,13 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.i_hp = 120
-	Global.i_atk = 20
+	Global.i_atk = 25
 	Global.inimigo_hp = 160
 	Global.inimigo_atk = 10
 	Global.big_shot = 20
+	Global.inimigo2_hp =140
+	Global.inimigo2_atk = 15
+	Global.big_shot2 =25
 	hud.visible = true
 
 #botão para iniciar o jogo

@@ -101,7 +101,7 @@ offset_right = 27.0
 offset_bottom = 16.0
 theme_override_styles/background = SubResource("StyleBoxFlat_44jq3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vg7sy")
-max_value = 160.0
+max_value = 140.0
 fill_mode = 3
 show_percentage = false
 
