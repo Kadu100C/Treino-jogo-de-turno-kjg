@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgypgsh8gvp1a"]
+[gd_scene load_steps=6 format=3 uid="uid://bgypgsh8gvp1a"]
 
 [ext_resource type="Script" uid="uid://u12segp66t1i" path="res://Scripts/tela_inicial.gd" id="1_pekxb"]
 [ext_resource type="FontFile" uid="uid://bma8w7r6w3ixh" path="res://Fonts/dogica.ttf" id="1_rrt2p"]
 [ext_resource type="Theme" uid="uid://iovpinp2vmiu" path="res://Fonts/theme.tres" id="2_pekxb"]
+[ext_resource type="AudioStream" uid="uid://cl03yj6ryj8r7" path="res://musicas e sons/deltarune-battle-start-jingle-slowed.mp3" id="4_s7e5w"]
 
 [sub_resource type="Theme" id="Theme_rrt2p"]
 default_font = ExtResource("1_rrt2p")
@@ -68,6 +69,9 @@ text = "Treino"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="start" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s7e5w")
 
 [connection signal="pressed" from="hud/iniciar_jogo" to="." method="_on_iniciar_jogo_pressed"]
 [connection signal="pressed" from="hud/sair" to="." method="_on_sair_pressed"]

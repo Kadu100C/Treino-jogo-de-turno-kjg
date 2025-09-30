@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by7i20cygt54b"
+path="res://.godot/imported/deltarune-release-shoot.mp3-6c897a8f417d8c9b193f288e290d0cd7.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/deltarune-release-shoot.mp3"
+dest_files=["res://.godot/imported/deltarune-release-shoot.mp3-6c897a8f417d8c9b193f288e290d0cd7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

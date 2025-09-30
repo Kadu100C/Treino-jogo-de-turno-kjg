@@ -78,9 +78,23 @@ texture = ExtResource("5_ieg8j")
 [node name="inimigos" type="Node" parent="Control"]
 
 [node name="inimigo" parent="Control/inimigos" instance=ExtResource("7_xkapm")]
-position = Vector2(241, 90)
+position = Vector2(203, 72)
 
 [node name="vida_inimigo" type="ProgressBar" parent="Control/inimigos/inimigo"]
+offset_left = 23.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_44jq3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vg7sy")
+max_value = 160.0
+fill_mode = 3
+show_percentage = false
+
+[node name="inimigo2" parent="Control/inimigos" instance=ExtResource("7_xkapm")]
+position = Vector2(234, 113)
+
+[node name="vida_inimigo_2" type="ProgressBar" parent="Control/inimigos/inimigo2"]
 offset_left = 23.0
 offset_top = -11.0
 offset_right = 27.0
@@ -153,6 +167,37 @@ theme_override_font_sizes/font_size = 8
 text = "Aprimorar"
 flat = true
 
+[node name="escolha" type="MarginContainer" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 47.0
+offset_top = 132.0
+offset_right = 95.0
+offset_bottom = 166.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/escolha"]
+layout_mode = 2
+theme = SubResource("Theme_vg7sy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_njb5t")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/escolha/PanelContainer"]
+layout_mode = 2
+
+[node name="inimigo_a" type="Button" parent="Control/escolha/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_44jq3")
+theme_override_font_sizes/font_size = 8
+text = "Criatura A"
+flat = true
+
+[node name="inimigo_b" type="Button" parent="Control/escolha/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_44jq3")
+theme_override_font_sizes/font_size = 8
+text = "Criatura B"
+flat = true
+
 [node name="efeitos sonoros" type="Node" parent="Control"]
 
 [node name="enemy_hit" type="AudioStreamPlayer2D" parent="Control/efeitos sonoros"]
@@ -189,4 +234,6 @@ visible = false
 [connection signal="pressed" from="Control/act/PanelContainer/VBoxContainer/magia" to="." method="_on_magia_pressed"]
 [connection signal="pressed" from="Control/magic/PanelContainer/VBoxContainer/curar" to="." method="_on_curar_pressed"]
 [connection signal="pressed" from="Control/magic/PanelContainer/VBoxContainer/aprimorar" to="." method="_on_aprimorar_pressed"]
+[connection signal="pressed" from="Control/escolha/PanelContainer/VBoxContainer/inimigo_a" to="." method="_on_inimigo_a_pressed"]
+[connection signal="pressed" from="Control/escolha/PanelContainer/VBoxContainer/inimigo_b" to="." method="_on_inimigo_b_pressed"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

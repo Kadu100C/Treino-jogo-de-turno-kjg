@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cloh0p7vj6dhy"
+path="res://.godot/imported/deltarune-ominous-cancel.mp3-babc895cfea58a946c3c52748b18a374.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/deltarune-ominous-cancel.mp3"
+dest_files=["res://.godot/imported/deltarune-ominous-cancel.mp3-babc895cfea58a946c3c52748b18a374.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

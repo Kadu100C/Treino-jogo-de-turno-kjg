@@ -213,6 +213,7 @@ animations = [{
 
 [node name="inimigo" type="AnimatedSprite2D" groups=["Enemy"]]
 sprite_frames = SubResource("SpriteFrames_d5s2e")
-animation = &"enemy_bruh"
+animation = &"enemy_idle"
 autoplay = "enemy_idle"
+frame_progress = 0.30680737
 script = ExtResource("1_fokg4")

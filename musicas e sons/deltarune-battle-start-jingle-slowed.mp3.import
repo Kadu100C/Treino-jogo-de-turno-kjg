@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cl03yj6ryj8r7"
+path="res://.godot/imported/deltarune-battle-start-jingle-slowed.mp3-5e897166ee046bf6fa45580caeda8b3f.mp3str"
+
+[deps]
+
+source_file="res://musicas e sons/deltarune-battle-start-jingle-slowed.mp3"
+dest_files=["res://.godot/imported/deltarune-battle-start-jingle-slowed.mp3-5e897166ee046bf6fa45580caeda8b3f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
