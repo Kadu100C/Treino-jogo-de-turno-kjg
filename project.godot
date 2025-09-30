@@ -15,6 +15,11 @@ run/main_scene="uid://bgypgsh8gvp1a"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Scripts/global.gd"
+I="*res://Scenes/I.tscn"
+
 [display]
 
 window/size/viewport_width=320
@@ -22,6 +27,11 @@ window/size/viewport_height=180
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+Player=""
+Enemy=""
 
 [rendering]
 
