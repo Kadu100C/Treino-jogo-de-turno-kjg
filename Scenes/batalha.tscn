@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c3p3x47kkbapn"]
+[gd_scene load_steps=20 format=3 uid="uid://c3p3x47kkbapn"]
 
 [ext_resource type="Script" uid="uid://slb6nn0a5kvl" path="res://Scripts/batalha.gd" id="1_3fqmh"]
 [ext_resource type="Texture2D" uid="uid://bt68kxwxg732f" path="res://Sprites/sprite batalha.png" id="3_h366l"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://csikddsicv5fo" path="res://musicas e sons/undertale-save.mp3" id="12_wpwty"]
 [ext_resource type="AudioStream" uid="uid://cuqdx57jwnv5t" path="res://musicas e sons/undertale-soul-shatter.mp3" id="13_qyj0f"]
 [ext_resource type="AudioStream" uid="uid://i60ekul242jm" path="res://musicas e sons/Ruder Buster.mp3" id="14_qyj0f"]
+[ext_resource type="PackedScene" uid="uid://bc6bdhk6iw22t" path="res://Scenes/slash.tscn" id="15_gfotq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44jq3"]
 bg_color = Color(0.37254903, 0.09803922, 0.09803922, 1)
@@ -63,6 +64,10 @@ value = 100.0
 fill_mode = 3
 show_percentage = false
 
+[node name="slash3" parent="Control/I" instance=ExtResource("15_gfotq")]
+position = Vector2(-1, 2)
+frame_progress = 0.99375916
+
 [node name="bruh" type="Sprite2D" parent="Control"]
 visible = false
 position = Vector2(74, 92)
@@ -98,6 +103,14 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vg7sy")
 max_value = 120.0
 fill_mode = 3
 show_percentage = false
+
+[node name="slash" parent="Control/inimigos" instance=ExtResource("15_gfotq")]
+position = Vector2(207, 76)
+frame_progress = 0.4207272
+
+[node name="slash2" parent="Control/inimigos" instance=ExtResource("15_gfotq")]
+position = Vector2(239, 118)
+frame_progress = 0.99375916
 
 [node name="act" type="MarginContainer" parent="Control"]
 visible = false

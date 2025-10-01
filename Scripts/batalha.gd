@@ -27,6 +27,9 @@ extends Node2D
 @onready var inimigo_a: Button = $Control/escolha/PanelContainer/VBoxContainer/inimigo_a
 @onready var inimigo_b: Button = $Control/escolha/PanelContainer/VBoxContainer/inimigo_b
 
+@onready var slash: AnimatedSprite2D = $Control/inimigos/slash
+@onready var slash_2: AnimatedSprite2D = $Control/inimigos/slash2
+@onready var slash_3: AnimatedSprite2D = $Control/I/slash3
 
 
 
@@ -99,6 +102,7 @@ func turno_inimigo():
 			inimigo.play("big_shot")
 			enemy_attck.play()
 		await get_tree().create_timer(1.5).timeout
+		slash_3.play("arahc")
 		jogador.play("damage")
 		take_damage.play()
 		await get_tree().create_timer(1).timeout
@@ -134,6 +138,7 @@ func turno_inimigo2():
 			inimigo_2.play("big_shot")
 			enemy_attck.play()
 		await get_tree().create_timer(1.5).timeout
+		slash_3.play("arahc")
 		jogador.play("damage")
 		take_damage.play()
 		await get_tree().create_timer(1).timeout
@@ -160,6 +165,7 @@ func _on_lutar_pressed() -> void:
 func _on_inimigo_a_pressed() -> void:
 	turno = 0
 	jogador.play("attack")
+	slash.play("chara")
 	await get_tree().create_timer(0.4).timeout
 	i_slash.play()
 	inimigo.play("enemy_damage")
@@ -183,6 +189,7 @@ func _on_inimigo_b_pressed() -> void:
 	jogador.play("attack")
 	await get_tree().create_timer(0.4).timeout
 	i_slash.play()
+	slash_2.play("chara")
 	inimigo_2.play("enemy_damage")
 	await get_tree().create_timer(0.5).timeout
 	enemy_hit.play()
